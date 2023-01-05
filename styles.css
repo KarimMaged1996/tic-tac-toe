@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  gap: 3vw;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Gochi Hand', cursive;
+}
+.players {
+  font-size: 4vw;
+}
+
+.board {
+  width: 40vw;
+  height: 40vw;
+  border-width: 1vw;
+  border-style: solid;
+  border-image: url(/wooden-plank-textured-background-material.jpg) 30%;
+  background-color: green;
+  padding: 4vw;
+  display: grid;
+  grid-template-columns: 10vw 10vw 10vw;
+  grid-template-rows: 10vw 10vw 10vw;
+}
+
+.marker {
+  width: 10vw;
+  height: 10vw;
+  font-size: 10vw;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.marker:nth-child(1) {
+  border-right: solid 0.25vw white;
+  border-bottom: solid 0.25vw white;
+}
+
+div.marker:nth-child(2) {
+  border-left: solid 0.25vw white;
+  border-right: solid 0.25vw white;
+  border-bottom: solid 0.25vw white;
+}
+
+div.marker:nth-child(3) {
+  border-left: solid 0.25vw white;
+  border-bottom: solid 0.25vw white;
+}
+
+div.marker:nth-child(4) {
+  border-right: solid 0.25vw white;
+  border-top: solid 0.25vw white;
+  border-bottom: solid 0.25vw white;
+}
+
+div.marker:nth-child(5) {
+  border-left: solid 0.25vw white;
+  border-right: solid 0.25vw white;
+  border-bottom: solid 0.25vw white;
+  border-top: solid 0.25vw white;
+}
+
+div.marker:nth-child(6) {
+  border-left: solid 0.25vw white;
+  border-top: solid 0.25vw white;
+  border-bottom: solid 0.25vw white;
+}
+
+div.marker:nth-child(7) {
+  border-top: solid 0.25vw white;
+  border-right: solid 0.25vw white;
+}
+
+div.marker:nth-child(8) {
+  border-left: solid 0.25vw white;
+  border-right: solid 0.25vw white;
+  border-top: solid 0.25vw white;
+}
+
+div.marker:nth-child(9) {
+  border-left: solid 0.25vw white;
+  border-top: solid 0.25vw white;
+}
