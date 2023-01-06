@@ -3,7 +3,12 @@ function player(name, marker) {
   return { name, marker };
 }
 
-// the module that will control the board on the page
+/* the Module that will control the board on the page
+   includes a function rebder that will render the Xs and Os on the page,
+   includes a function add to board that will add Xs abd Ox to board array,
+   includes a function restart that will reset everything when restart button 
+   is clicked. (All properties and methods are private)
+*/
 const gameBoard = (function () {
   let board = ['', '', '', '', '', '', '', '', ''];
   let counter = 0;
@@ -11,14 +16,12 @@ const gameBoard = (function () {
   // select the markers from the dom
   let markers = Array.from(document.querySelectorAll('.marker'));
 
-  // function that will render the game board every time a marker is clicked
   function render(board) {
     markers.forEach((marker, index) => {
       marker.textContent = board[index];
     });
   }
 
-  //function that will add X or O to the board array when a marker is clicked
   function addToBoard(marker, index) {
     board[index] = marker;
   }
@@ -26,6 +29,7 @@ const gameBoard = (function () {
   // event handler for the markers
   markers.forEach((elem, index) => {
     elem.addEventListener('click', function (e) {
+      // the if condition is used so this function won't replace existing marker
       if (e.target.textContent === '') {
         addToBoard(gameController.activePlayer(counter).marker, index);
         render(board);
@@ -57,11 +61,17 @@ const gameBoard = (function () {
   });
 })();
 
-// module that will control the flow of the game
+/* Moddule that will control the flow of the game 
+   includes a function activePlayer that will check for the axtive player 
+   (either X or o) based on a counter provided.
+   includes a helper (private) function endGame taht will fire uopn win or draw
+   includes a function checkWinOrDraw that will check if there is a win or draw
+*/
 const gameController = (function () {
   const players = document.querySelectorAll('.players');
   const playerX = player('player X', 'X');
   const playerY = player('player O', 'O');
+
   function activePlayer(counter) {
     if (counter === 0 || counter % 2 === 0) {
       players[0].style.color = 'black';
